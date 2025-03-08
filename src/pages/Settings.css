@@ -1,0 +1,17 @@
+/* src/pages/Settings.css */
+.settings-page {
+    padding: 20px;
+  }
+  
+  .settings-page h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .settings-option {
+    font-size: 18px;
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+  
