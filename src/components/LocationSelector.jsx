@@ -1,13 +1,13 @@
 import React from 'react';
 import "../App.css";
-import LocationOption from './LocationOption';
-export default function LocationSelector() {
+export default function LocationSelector({ children }) {
   return (
-    <div>
-        <LocationOption name={"Bankview Calgary"}/>
-        <LocationOption name={"Marda Loop Calgary"}/>
-        <LocationOption name={"South Point Calgary"}/>
-        <LocationOption name={"North Point Calgary"}/>
+    <div style={{
+        paddingBottom: '1rem',
+        paddingTop: '1rem',
+        
+    }}>
+        {children}
     </div>
   );
 }

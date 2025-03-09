@@ -1,7 +1,6 @@
 import React from 'react';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 
-export default function LocationOption({ name }) {
+export default function DepotOption({ name, distance }) {
   return (
     <div style={{ 
       backgroundColor: 'white', 
@@ -27,10 +26,8 @@ export default function LocationOption({ name }) {
           }}>
             {name}
           </h1>
-          <p style={{ margin: '0' }}>Trash Day: Wednesday</p>
-          <p style={{ margin: '0' }}>Compost Day: Thursday</p>
+          <p style={{ margin: '0' }}>{distance} km</p>
         </div>
-        <NotificationsIcon style={{ color: '#777', fontSize: '3rem' }} />
       </div>
     </div>
   );

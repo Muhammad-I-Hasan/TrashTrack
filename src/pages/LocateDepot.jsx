@@ -2,9 +2,9 @@ import Navbar from "../components/Navbar";
 import "../App.css";
 import SearchBar from "../components/SearchBar";
 import LocationSelector from "../components/LocationSelector";
-import LocationOption from "../components/LocationOption";
+import DepotOption from "../components/DepotOption";
 
-export default function TrashSchedule() {
+export default function LocateDepot() {
   return (
     <div
       className="page"
@@ -15,7 +15,7 @@ export default function TrashSchedule() {
         overflow: "hidden",
       }}
     >
-      <Navbar pageTitle={"Trash Schedule"} />
+      <Navbar pageTitle={"Locate Depot"} />
       <div
         className="content"
         style={{
@@ -41,13 +41,11 @@ export default function TrashSchedule() {
           }}
         >
           <LocationSelector>
-            <LocationOption name={"Bankview Calgary"}/>
-            <LocationOption name={"Marda Loop Calgary"}/>
-            <LocationOption name={"South Point Calgary"}/>
-            <LocationOption name={"North Point Calgary"}/>
-            <LocationOption name={"Marda Loop Calgary"}/>
-            <LocationOption name={"South Point Calgary"}/>
-            <LocationOption name={"North Point Calgary"}/>
+            <DepotOption name={'Depot 1'} distance={2}/>
+            <DepotOption name={'Depot 2'} distance={5}/>
+            <DepotOption name={'Depot 3'} distance={10}/>
+            <DepotOption name={'Depot 4'} distance={11}/>
+            <DepotOption name={'Depot 5'} distance={25}/>
           </LocationSelector>
         </div>
       </div>

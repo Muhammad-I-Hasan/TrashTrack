@@ -14,13 +14,14 @@ export default function SearchBar() {
         type="text"
         placeholder="Search..."
         style={{
-          border: '2px solid #000',
+          border: '1px solid #000',
           borderRadius: '8px',
           flex: 1,
           outline: 'none',
           width: '100%',
-          paddingTop: '0.5rem',
-          paddingBottom: '0.5rem'
+          paddingTop: '0.75rem',
+          paddingBottom: '0.75rem',
+          paddingLeft: '0.75rem'
         }}
       />
       <SearchIcon style={{ marginLeft: '1rem' }}/>
