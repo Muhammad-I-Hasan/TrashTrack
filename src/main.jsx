@@ -5,10 +5,16 @@ import App from "./App";
 import { StrictMode } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
+import CssBaseline from '@mui/material/CssBaseline';
+import GlobalStyles from '@mui/material/GlobalStyles';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
-   <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <GlobalStyles styles={{
+          body: { fontFamily: 'Roboto, Helvetica, Arial, sans-serif' },
+        }} />
       <BrowserRouter>
         <App />
       </BrowserRouter>

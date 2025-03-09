@@ -1,6 +1,9 @@
 import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+  },
   palette: {
     primary: {
       main: "#4CAF50", // Green color
