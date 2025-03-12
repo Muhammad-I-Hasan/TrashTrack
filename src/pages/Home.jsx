@@ -38,7 +38,7 @@ export default function Home() {
 
         {/* Navigation Buttons */}
         <Box sx={{ display: "flex", flexDirection: "column", gap: "15px", width: "100%", maxWidth: "400px", marginTop: "-20px" }}>
-          <Link to="/page1" style={{ textDecoration: "none" }}>
+          <Link to="/waste-scanner" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="primary" fullWidth sx={{ height: "60px", fontSize: "18px", textTransform: "none" }}>
               Waste Scanner
             </Button>
