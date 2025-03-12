@@ -5,7 +5,8 @@ export default function CreateLabels() {
   return (
     <div style={{ 
       width: "80vw", 
-      margin: "0 auto", 
+      margin: "0 auto",
+      maxWidth: "500px",
       height: "100vh", 
       display: "flex", 
       flexDirection: "column" 
