@@ -1,22 +1,23 @@
 import React from "react";
 import SearchBar from "../components/SearchBar";
-import {Button} from "@mui/material";
+import Button from "@mui/material";
 import Navbar from "../components/Navbar";
+import {ShoppingBag, LocalDrink, Restaurant, DinnerDining, Archive, BatteryFull, Liquor, Smartphone, Newspaper, Apple, Checkroom, LocalCafe} from "@mui/icons-material";
 
 export default function Catalog() {
   const items = [
-    { name: "Plastic Bag", emoji: "🛍️"},
-    { name: "Water Bottle", emoji: "💧" },
-    { name: "Plastic Cutlery", emoji: "🍴" },
-    { name: "Banana", emoji: "🍌"},
-    { name: "Cardboard", emoji: "📦" },
-    { name: "Battery", emoji: "🔋" },
-    { name: "Glass Bottle", emoji: "🍾" },
-    { name: "Phone/Tablet", emoji: "📱"},
-    { name: "Newspaper", emoji: "📰" },
-    { name: "Apple Core", emoji: "🍎" },
-    { name: "Clothing", emoji: "👕" },
-    { name: "Styrofoam Cup", emoji: "🥤" },
+    { name: "Plastic Bag", icon: <ShoppingBag fontSize="large" /> },
+    { name: "Water Bottle", icon: <LocalDrink fontSize="large" /> },
+    { name: "Plastic Cutlery", icon: <Restaurant fontSize="large" /> },
+    { name: "Food Scraps", icon: <DinnerDining fontSize="large" />},
+    { name: "Cardboard", icon: <Archive fontSize="large" /> },
+    { name: "Battery", icon: <BatteryFull fontSize="large" /> },
+    { name: "Glass Bottle", icon: <Liquor fontSize="large" /> },
+    { name: "Phone/Tablet", icon: <Smartphone fontSize="large" /> },
+    { name: "Newspaper", icon: <Newspaper fontSize="large" /> },
+    { name: "Apple Core", icon: <Apple fontSize="large" /> },
+    { name: "Clothing", icon: <Checkroom fontSize="large" /> },
+    { name: "Styrofoam Cup", icon: <LocalCafe fontSize="large" /> },
   ];
 
   return (
@@ -113,7 +114,6 @@ export default function Catalog() {
               }}
             >
               {item.icon}
-              <span className="text-2xl">{item.emoji}</span>
               <span style={{ marginTop: '10px', fontSize: '15px' }}>{item.name}</span>
             </Button>
           ))}
