@@ -48,12 +48,12 @@ export default function Home() {
               Waste Catalog
             </Button>
           </Link>
-          <Link to="/page3" style={{ textDecoration: "none" }}>
+          <Link to="/trashSchedule" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="primary" fullWidth sx={{ height: "60px", fontSize: "18px", textTransform: "none" }}>
               Trash Schedule
             </Button>
           </Link>
-          <Link to="/page4" style={{ textDecoration: "none" }}>
+          <Link to="/locateDepot" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="primary" fullWidth sx={{ height: "60px", fontSize: "18px", textTransform: "none" }}>
               Locate Depot
             </Button>
