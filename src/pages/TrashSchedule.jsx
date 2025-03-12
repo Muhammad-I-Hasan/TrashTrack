@@ -3,6 +3,7 @@ import "../App.css";
 import SearchBar from "../components/SearchBar";
 import LocationSelector from "../components/LocationSelector";
 import LocationOption from "../components/LocationOption";
+import mapImage from "../images/map.jpg"; // Adjust the path as needed
 
 export default function TrashSchedule() {
   return (
@@ -29,9 +30,22 @@ export default function TrashSchedule() {
           className="tsMap"
           style={{
             height: "35vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          map goes here
+          <img 
+            src={mapImage} 
+            alt="Trash Schedule Map" 
+            style={{ 
+              width: "100%", 
+              height: "100%", 
+              objectFit: "cover", 
+              borderRadius: "10px", 
+              border: "1px solid #ccc" 
+            }} 
+          />
         </div>
         <div
           style={{
