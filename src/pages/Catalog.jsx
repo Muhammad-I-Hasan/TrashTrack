@@ -31,7 +31,7 @@ export default function Catalog() {
           alignItems: "center",
           justifyContent: "center",
           flex: 1,
-          height: '100%',
+          height: '90vh',
         }}
       >
         <SearchBar />
@@ -44,6 +44,7 @@ export default function Catalog() {
                 bgcolor: "#1E88E5",
                 color: "white",
                 mr: 1,
+                mb: 1,
                 "&:hover": {bgcolor: "#1565C0"},
               }} > Recyclables (Blue Bin)
             </Button>
@@ -54,6 +55,7 @@ export default function Catalog() {
                 bgcolor: "#43A047",
                 color: "white",
                 mr: 1,
+                mb: 1,
                 "&:hover": {bgcolor: "#2E7D32"},
               }} > Compost (Green Bin)
             </Button>
@@ -63,12 +65,13 @@ export default function Catalog() {
               sx={{
                 bgcolor: "#333333",
                 color: "white",
+                mb: 1,
                 "&:hover": { bgcolor: "#000000" },
               }} > Trash (Black Bin) </Button>
           </div>
         </div>
 
-        <div className="mt-8" style={{ marginTop: '15px' }}>
+        <div className="mt-8" style={{ marginTop: '15px', marginBottom: '15px'}}>
           <label className="text-lg font-semibold" style={{ marginTop: '10px' }}>Sort By:</label>
           <select className="ml-2 p-2 border rounded-md">
             <option>Most Popular</option>
@@ -78,13 +81,18 @@ export default function Catalog() {
         </div>
 
         <div
-          className="grid"
+          div className="mt-8 w-full max-w-md"
           style={{
+            maxHeight: "400px", 
+            overflowY: "auto",
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 100px)',
             gap: '15px',
             justifyItems: 'center',
             alignItems: 'center',
+            border: "2px solid #ccc", 
+            borderRadius: "8px", 
+            padding: "10px",
           }} 
           > {items.map((item, index) => (
             <Button
