@@ -1,6 +1,6 @@
 import React from "react";
 import SearchBar from "../components/SearchBar";
-import Button from "@mui/material";
+import {Button} from "@mui/material";
 import Navbar from "../components/Navbar";
 import {ShoppingBag, LocalDrink, Restaurant, DinnerDining, Archive, BatteryFull, Liquor, Smartphone, Newspaper, Apple, Checkroom, LocalCafe} from "@mui/icons-material";
 
