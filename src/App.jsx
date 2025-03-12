@@ -5,6 +5,7 @@ import TrashSchedule from "./pages/TrashSchedule";
 import LocateDepot from "./pages/LocateDepot";
 import CreateLabels from "./pages/CreateLabels";
 import WasteScanner from "./pages/WasteScanner";
+import Catalog from "./pages/Catalog";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       {/* Navigation Links */}
       <nav>
         <Link to="/">Home</Link> | <Link to="/settings">Settings</Link> | <Link to="/trashSchedule">Trash Schedule</Link> | <Link to="/locateDepot">Locate Depot</Link> | <Link to="/createLabels">Create Labels</Link>
+      <Link to="/">Home</Link> | <Link to="/settings">Settings</Link> | <Link to="/trashSchedule">Trash Schedule</Link> | <Link to="/locateDepot">Locate Depot</Link> | <Link to="/Catalog">Catalog</Link>
       </nav>
 
       {/* Define Routes */}
@@ -22,6 +24,7 @@ function App() {
         <Route path="/createLabels" element={<CreateLabels />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/waste-scanner" element={<WasteScanner />} />
+        <Route path="/Catalog" element={<Catalog />} />
       </Routes>
     </div>
   );
