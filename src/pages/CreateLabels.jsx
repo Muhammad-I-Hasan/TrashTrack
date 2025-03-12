@@ -1,101 +1,104 @@
 import React from "react";
+import {
+  Box,
+  Button,
+  Typography,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  Select,
+  TextField
+} from "@mui/material";
 import Navbar from "../components/Navbar";
 
 export default function CreateLabels() {
   return (
-    <div
+    <Box
       className="page"
-      style={{
-        display: "flex",
-        flexDirection: "column",
+      sx={{
+        backgroundColor: "#f0f0f0",
         height: "100vh",
         overflow: "hidden",
-        background: "#f0f0f0",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      {/* Header */}
+      {/* Navbar Header */}
       <Navbar pageTitle="Create Labels" />
 
-      {/* Main Content Area */}
-      <div
+      {/* Content Area */}
+      <Box
         className="content"
-        style={{
-          display: "flex",
-          flexDirection: "column",
+        sx={{
           flex: 1,
+          p: 3,
+          display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "20px",
         }}
       >
-        {/* Form Container */}
-        <div
-          style={{
+        <Box
+          sx={{
             width: "80%",
+            maxWidth: "500px",
             backgroundColor: "white",
-            padding: "1rem",
-            borderRadius: "8px",
-            boxShadow: "0px 2px 8px rgba(0,0,0,0.2)",
+            borderRadius: "12px",
+            boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
+            p: 3,
           }}
         >
+          <Typography
+            variant="h5"
+            sx={{ mb: 2, fontWeight: "bold", textAlign: "center" }}
+          >
+            Create a Label
+          </Typography>
+
           {/* Color Dropdown */}
-          <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="color-select" style={{ marginRight: "0.5rem" }}>
-              Color:
-            </label>
-            <select id="color-select" name="color">
-              <option value="">Select a color</option>
-              <option value="green">Green</option>
-              <option value="blue">Blue</option>
-              <option value="red">Red</option>
-              {/* Additional colors as needed */}
-            </select>
-          </div>
+          <FormControl fullWidth sx={{ mb: 2 }}>
+            <InputLabel id="color-label">Color</InputLabel>
+            <Select labelId="color-label" id="color-select" label="Color" defaultValue="">
+              <MenuItem value="">
+                <em>Select a color</em>
+              </MenuItem>
+              <MenuItem value="green">Green</MenuItem>
+              <MenuItem value="blue">Blue</MenuItem>
+              <MenuItem value="red">Red</MenuItem>
+            </Select>
+          </FormControl>
 
           {/* Title Field */}
-          <div style={{ marginBottom: "1rem" }}>
-            <label htmlFor="label-title" style={{ marginRight: "0.5rem" }}>
-              Title:
-            </label>
-            <input
-              id="label-title"
-              type="text"
-              placeholder="Type of Trash (e.g., Recyclables)"
-              readOnly
-              style={{
-                backgroundColor: "#f0f0f0",
-                border: "1px solid #ccc",
-                padding: "0.5rem",
-                width: "100%",
-              }}
-            />
-          </div>
+          <TextField
+            fullWidth
+            id="label-title"
+            label="Title"
+            placeholder="Type of Trash (e.g., Recyclables)"
+            variant="outlined"
+            InputProps={{
+              readOnly: true,
+            }}
+            sx={{ mb: 2 }}
+          />
 
           {/* Example Items */}
-          <div style={{ marginBottom: "1rem" }}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                marginBottom: "0.5rem",
-              }}
-            >
-              <label style={{ marginRight: "0.5rem" }}>Example Items:</label>
-              <button type="button">Select Items</button>
-            </div>
-            <div style={{ fontStyle: "italic", color: "#777" }}>
+          <Box sx={{ mb: 2 }}>
+            <Typography variant="subtitle1" sx={{ mb: 1 }}>
+              Example Items:
+            </Typography>
+            <Button variant="outlined" size="small" sx={{ mb: 1 }}>
+              Select Items
+            </Button>
+            <Typography variant="body2" color="textSecondary">
               No items selected
-            </div>
-          </div>
+            </Typography>
+          </Box>
 
           {/* Print Button */}
-          <div style={{ textAlign: "center" }}>
-            <button type="button" style={{ padding: "0.75rem 1.5rem" }}>
-              Print
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+          <Button variant="contained" fullWidth>
+            Print
+          </Button>
+        </Box>
+      </Box>
+    </Box>
   );
 }
