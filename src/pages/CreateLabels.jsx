@@ -13,6 +13,8 @@ import {
   MenuItem,
   TextField,
 } from "@mui/material";
+import PrintIcon from "@mui/icons-material/Print";
+import EditIcon from "@mui/icons-material/Edit";
 import Navbar from "../components/Navbar";
 
 // This code was assisted by ChatGPT, but the design is entirely my own (Jaimie Marchuk).
@@ -62,7 +64,12 @@ export default function CreateLabels() {
         >
           <Typography
             variant="h5"
-            sx={{ mb: 3, fontWeight: "bold", textAlign: "center", color: "#333" }}
+            sx={{
+              mb: 3,
+              fontWeight: "bold",
+              textAlign: "center",
+              color: "#333",
+            }}
           >
             Create a Label
           </Typography>
@@ -70,7 +77,12 @@ export default function CreateLabels() {
           {/* Color Dropdown */}
           <FormControl fullWidth sx={{ mb: 3 }}>
             <InputLabel id="color-label">Color</InputLabel>
-            <Select labelId="color-label" id="color-select" label="Color" defaultValue="">
+            <Select
+              labelId="color-label"
+              id="color-select"
+              label="Color"
+              defaultValue=""
+            >
               <MenuItem value="">
                 <em>Select a color</em>
               </MenuItem>
@@ -95,10 +107,20 @@ export default function CreateLabels() {
 
           {/* Example Items */}
           <Box sx={{ mb: 3 }}>
-            <Typography variant="subtitle1" sx={{ mb: 1, fontWeight: 500 }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ mb: 1, fontWeight: 500 }}
+            >
               Example Items:
             </Typography>
-            <Button variant="outlined" size="small" sx={{ mb: 1, textTransform: "none" }}>
+            <Button
+              variant="outlined"
+              size="small"
+              sx={{
+                mb: 1,
+                textTransform: "none",
+              }}
+            >
               Select Items
             </Button>
             <Typography variant="body2" color="textSecondary">
@@ -107,7 +129,16 @@ export default function CreateLabels() {
           </Box>
 
           {/* Print Button */}
-          <Button variant="contained" fullWidth onClick={handlePrintClick} sx={{ py: 1.5, fontSize: "1rem" }}>
+          <Button
+            variant="contained"
+            fullWidth
+            onClick={handlePrintClick}
+            sx={{
+              py: 1.5,
+              fontSize: "1rem",
+              textTransform: "none",
+            }}
+          >
             Print
           </Button>
         </Box>
@@ -125,7 +156,14 @@ export default function CreateLabels() {
           },
         }}
       >
-        <DialogTitle sx={{ textAlign: "center", fontWeight: "bold" }}>
+        <DialogTitle
+          sx={{
+            textAlign: "center",
+            fontWeight: "bold",
+            pb: 1,
+            borderBottom: "1px solid #ddd",
+          }}
+        >
           Confirm Print
         </DialogTitle>
         <DialogContent sx={{ py: 3 }}>
@@ -144,7 +182,10 @@ export default function CreateLabels() {
                 textAlign: "center",
               }}
             >
-              <Typography variant="h6" sx={{ color: "#fff", fontWeight: "bold" }}>
+              <Typography
+                variant="h6"
+                sx={{ color: "#fff", fontWeight: "bold", mb: 1 }}
+              >
                 Label Title
               </Typography>
               <Typography variant="body2" sx={{ color: "#e0f2f1" }}>
@@ -156,21 +197,46 @@ export default function CreateLabels() {
               sx={{
                 p: 3,
                 display: "flex",
-                justifyContent: "space-evenly",
+                justifyContent: "space-between",
+                gap: 2,
                 backgroundColor: "#fafafa",
               }}
             >
-              <Button variant="contained" sx={{ textTransform: "none" }}>
+              <Button
+                variant="contained"
+                fullWidth
+                startIcon={<PrintIcon />}
+                sx={{
+                  backgroundColor: "#4caf50",
+                  textTransform: "none",
+                  mr: 1,
+                  "&:hover": { backgroundColor: "#43a047" },
+                }}
+              >
                 Print
               </Button>
-              <Button variant="outlined" sx={{ textTransform: "none" }}>
+              <Button
+                variant="outlined"
+                fullWidth
+                startIcon={<EditIcon />}
+                sx={{
+                  borderColor: "#ff9800",
+                  color: "#ff9800",
+                  textTransform: "none",
+                  ml: 1,
+                  "&:hover": { borderColor: "#fb8c00", color: "#fb8c00" },
+                }}
+              >
                 Continue Editing
               </Button>
             </Box>
           </Box>
         </DialogContent>
-        <DialogActions sx={{ justifyContent: "center" }}>
-          <Button onClick={() => setOpenPrintPopup(false)} sx={{ textTransform: "none" }}>
+        <DialogActions sx={{ justifyContent: "center", pb: 1 }}>
+          <Button
+            onClick={() => setOpenPrintPopup(false)}
+            sx={{ textTransform: "none", fontWeight: "bold" }}
+          >
             Close
           </Button>
         </DialogActions>
