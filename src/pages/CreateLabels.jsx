@@ -209,22 +209,20 @@ export default function CreateLabels() {
                 sx={{
                   backgroundColor: "#4caf50",
                   textTransform: "none",
-                  mr: 1,
                   "&:hover": { backgroundColor: "#43a047" },
                 }}
               >
                 Print
               </Button>
               <Button
-                variant="outlined"
+                variant="contained"
                 fullWidth
                 startIcon={<EditIcon />}
                 sx={{
-                  borderColor: "#ff9800",
-                  color: "#ff9800",
+                  backgroundColor: "#e0e0e0",
+                  color: "black",
                   textTransform: "none",
-                  ml: 1,
-                  "&:hover": { borderColor: "#fb8c00", color: "#fb8c00" },
+                  "&:hover": { backgroundColor: "#d5d5d5" },
                 }}
               >
                 Continue Editing
@@ -235,9 +233,9 @@ export default function CreateLabels() {
         <DialogActions sx={{ justifyContent: "center", pb: 1 }}>
           <Button
             onClick={() => setOpenPrintPopup(false)}
-            sx={{ textTransform: "none", fontWeight: "bold" }}
+            sx={{ textTransform: "none", fontWeight: "bold", minWidth: "auto", px: 2 }}
           >
-            Close
+            x
           </Button>
         </DialogActions>
       </Dialog>
