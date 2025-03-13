@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import TrashSchedule from "./pages/TrashSchedule";
 import LocateDepot from "./pages/LocateDepot";
+import WasteScanner from "./pages/WasteScanner";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/trashSchedule" element={<TrashSchedule />} />
         <Route path="/locateDepot" element={<LocateDepot />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/waste-scanner" element={<WasteScanner />} />
       </Routes>
     </div>
   );
