@@ -3,7 +3,7 @@ import "../App.css";
 import SearchBar from "../components/SearchBar";
 import LocationSelector from "../components/LocationSelector";
 import LocationOption from "../components/LocationOption";
-
+import { Button } from "@mui/material";
 export default function TrashSchedule() {
   return (
     <div
@@ -24,7 +24,21 @@ export default function TrashSchedule() {
           flex: 1,
         }}
       >
-        <SearchBar />
+        <div
+        style={{
+          display: "flex",
+          flexDirection: "row",  // explicitly set to row
+          alignItems: "center",  // vertically centers both items
+          justifyContent: "center",
+          gap: "10px",         // optional spacing between the search bar and button
+          marginTop: "1rem"
+        }}
+        >
+          <SearchBar />
+          <Button>Edit Alerts</Button>
+        </div>
+
+        
         <div
           className="tsMap"
           style={{
