@@ -15,9 +15,12 @@ import {
 } from "@mui/material";
 import Navbar from "../components/Navbar";
 
+// This code was assisted by ChatGPT, but the design is entirely my own (Jaimie Marchuk).
 export default function CreateLabels() {
+  // State to control the visibility of the print confirmation popup.
   const [openPrintPopup, setOpenPrintPopup] = useState(false);
 
+  // Handler to open the print confirmation popup when the Print button is clicked.
   const handlePrintClick = () => {
     setOpenPrintPopup(true);
   };
@@ -52,20 +55,20 @@ export default function CreateLabels() {
             width: "80%",
             maxWidth: "500px",
             backgroundColor: "white",
-            borderRadius: "12px",
-            boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
-            p: 3,
+            borderRadius: "16px",
+            boxShadow: "0px 6px 16px rgba(0,0,0,0.15)",
+            p: 4,
           }}
         >
           <Typography
             variant="h5"
-            sx={{ mb: 2, fontWeight: "bold", textAlign: "center" }}
+            sx={{ mb: 3, fontWeight: "bold", textAlign: "center", color: "#333" }}
           >
             Create a Label
           </Typography>
 
           {/* Color Dropdown */}
-          <FormControl fullWidth sx={{ mb: 2 }}>
+          <FormControl fullWidth sx={{ mb: 3 }}>
             <InputLabel id="color-label">Color</InputLabel>
             <Select labelId="color-label" id="color-select" label="Color" defaultValue="">
               <MenuItem value="">
@@ -87,15 +90,15 @@ export default function CreateLabels() {
             InputProps={{
               readOnly: true,
             }}
-            sx={{ mb: 2 }}
+            sx={{ mb: 3 }}
           />
 
           {/* Example Items */}
-          <Box sx={{ mb: 2 }}>
-            <Typography variant="subtitle1" sx={{ mb: 1 }}>
+          <Box sx={{ mb: 3 }}>
+            <Typography variant="subtitle1" sx={{ mb: 1, fontWeight: 500 }}>
               Example Items:
             </Typography>
-            <Button variant="outlined" size="small" sx={{ mb: 1 }}>
+            <Button variant="outlined" size="small" sx={{ mb: 1, textTransform: "none" }}>
               Select Items
             </Button>
             <Typography variant="body2" color="textSecondary">
@@ -104,54 +107,72 @@ export default function CreateLabels() {
           </Box>
 
           {/* Print Button */}
-          <Button variant="contained" fullWidth onClick={handlePrintClick}>
+          <Button variant="contained" fullWidth onClick={handlePrintClick} sx={{ py: 1.5, fontSize: "1rem" }}>
             Print
           </Button>
         </Box>
       </Box>
 
-      {/* Print Confirmation Popup */}
-      <Dialog open={openPrintPopup} onClose={() => setOpenPrintPopup(false)}>
-        <DialogTitle>Confirm Print</DialogTitle>
-        <DialogContent>
+      {/* Creative Print Confirmation Popup */}
+      <Dialog
+        open={openPrintPopup}
+        onClose={() => setOpenPrintPopup(false)}
+        PaperProps={{
+          sx: {
+            borderRadius: "16px",
+            p: 2,
+            boxShadow: "0px 8px 20px rgba(0,0,0,0.2)",
+          },
+        }}
+      >
+        <DialogTitle sx={{ textAlign: "center", fontWeight: "bold" }}>
+          Confirm Print
+        </DialogTitle>
+        <DialogContent sx={{ py: 3 }}>
           <Box
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              border: "1px solid #ccc",
-              borderRadius: "8px",
+              borderRadius: "16px",
               overflow: "hidden",
+              boxShadow: "inset 0px 4px 8px rgba(0,0,0,0.1)",
             }}
           >
-            {/* Top half: Preview of the label */}
+            {/* Label Preview with Gradient */}
             <Box
               sx={{
-                backgroundColor: "blue", // Change to match your selected color if needed
-                p: 2,
+                background: "linear-gradient(135deg, #4caf50, #81c784)",
+                p: 3,
+                textAlign: "center",
               }}
             >
-              <Typography variant="h6" sx={{ color: "#fff" }}>
+              <Typography variant="h6" sx={{ color: "#fff", fontWeight: "bold" }}>
                 Label Title
               </Typography>
-              <Typography variant="body2" sx={{ color: "#fff" }}>
+              <Typography variant="body2" sx={{ color: "#e0f2f1" }}>
                 Item1, Item2, ...
               </Typography>
             </Box>
-            {/* Bottom half: Options */}
+            {/* Action Buttons */}
             <Box
               sx={{
-                p: 2,
+                p: 3,
                 display: "flex",
-                justifyContent: "space-around",
+                justifyContent: "space-evenly",
+                backgroundColor: "#fafafa",
               }}
             >
-              <Button variant="contained">Print</Button>
-              <Button variant="outlined">Continue Editing</Button>
+              <Button variant="contained" sx={{ textTransform: "none" }}>
+                Print
+              </Button>
+              <Button variant="outlined" sx={{ textTransform: "none" }}>
+                Continue Editing
+              </Button>
             </Box>
           </Box>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpenPrintPopup(false)}>Close</Button>
+        <DialogActions sx={{ justifyContent: "center" }}>
+          <Button onClick={() => setOpenPrintPopup(false)} sx={{ textTransform: "none" }}>
+            Close
+          </Button>
         </DialogActions>
       </Dialog>
     </Box>
