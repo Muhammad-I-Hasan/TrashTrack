@@ -1,3 +1,4 @@
+// Style choices were implemented by Sana Abdelhalem with ChatGPT's help.
 import React, { useState } from "react";
 import {
   Box,
