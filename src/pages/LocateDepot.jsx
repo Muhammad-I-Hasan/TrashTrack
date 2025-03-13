@@ -3,6 +3,7 @@ import "../App.css";
 import SearchBar from "../components/SearchBar";
 import LocationSelector from "../components/LocationSelector";
 import DepotOption from "../components/DepotOption";
+import mapImage from "../images/map.jpg"; // Adjust the path as needed
 
 export default function LocateDepot() {
   return (
@@ -29,9 +30,22 @@ export default function LocateDepot() {
           className="tsMap"
           style={{
             height: "35vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          map goes here
+          <img 
+            src={mapImage} 
+            alt="Depot Location Map" 
+            style={{ 
+              width: "100%", 
+              height: "100%", 
+              objectFit: "cover", 
+              borderRadius: "10px", 
+              border: "1px solid #ccc" 
+            }} 
+          />
         </div>
         <div
           style={{
@@ -52,3 +66,4 @@ export default function LocateDepot() {
     </div>
   );
 }
+

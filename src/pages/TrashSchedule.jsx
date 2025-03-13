@@ -3,7 +3,8 @@ import "../App.css";
 import SearchBar from "../components/SearchBar";
 import LocationSelector from "../components/LocationSelector";
 import LocationOption from "../components/LocationOption";
-
+import mapImage from "../images/map.jpg"; // Adjust the path as needed
+import { Button } from "@mui/material";
 export default function TrashSchedule() {
   return (
     <div
@@ -24,14 +25,41 @@ export default function TrashSchedule() {
           flex: 1,
         }}
       >
-        <SearchBar />
+        <div
+        style={{
+          display: "flex",
+          flexDirection: "row",  // explicitly set to row
+          alignItems: "center",  // vertically centers both items
+          justifyContent: "center",
+          gap: "10px",         // optional spacing between the search bar and button
+          marginTop: "1rem"
+        }}
+        >
+          <SearchBar />
+          <Button>Edit Alerts</Button>
+        </div>
+
+        
         <div
           className="tsMap"
           style={{
             height: "35vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          map goes here
+          <img 
+            src={mapImage} 
+            alt="Trash Schedule Map" 
+            style={{ 
+              width: "100%", 
+              height: "100%", 
+              objectFit: "cover", 
+              borderRadius: "10px", 
+              border: "1px solid #ccc" 
+            }} 
+          />
         </div>
         <div
           style={{
