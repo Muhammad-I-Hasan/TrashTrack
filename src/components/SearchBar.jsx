@@ -7,8 +7,8 @@ export default function SearchBar() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      marginTop: '1rem',
-      width: '80vw',
+      // marginTop: '1rem',
+      width: '60vw',
     }}>
       <input
         type="text"
@@ -24,7 +24,7 @@ export default function SearchBar() {
           paddingLeft: '0.75rem'
         }}
       />
-      <SearchIcon style={{ marginLeft: '1rem' }}/>
+      <SearchIcon style={{ marginLeft: '0.2rem' }}/>
     </div>
   );
 }
