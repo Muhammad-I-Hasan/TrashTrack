@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Button,
   Typography,
-  MenuItem,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
   FormControl,
   InputLabel,
   Select,
-  TextField
+  MenuItem,
+  TextField,
 } from "@mui/material";
 import Navbar from "../components/Navbar";
 
 export default function CreateLabels() {
+  const [openPrintPopup, setOpenPrintPopup] = useState(false);
+
+  const handlePrintClick = () => {
+    setOpenPrintPopup(true);
+  };
+
   return (
     <Box
       className="page"
@@ -94,11 +104,56 @@ export default function CreateLabels() {
           </Box>
 
           {/* Print Button */}
-          <Button variant="contained" fullWidth>
+          <Button variant="contained" fullWidth onClick={handlePrintClick}>
             Print
           </Button>
         </Box>
       </Box>
+
+      {/* Print Confirmation Popup */}
+      <Dialog open={openPrintPopup} onClose={() => setOpenPrintPopup(false)}>
+        <DialogTitle>Confirm Print</DialogTitle>
+        <DialogContent>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              border: "1px solid #ccc",
+              borderRadius: "8px",
+              overflow: "hidden",
+            }}
+          >
+            {/* Top half: Preview of the label */}
+            <Box
+              sx={{
+                backgroundColor: "blue", // Change to match your selected color if needed
+                p: 2,
+              }}
+            >
+              <Typography variant="h6" sx={{ color: "#fff" }}>
+                Label Title
+              </Typography>
+              <Typography variant="body2" sx={{ color: "#fff" }}>
+                Item1, Item2, ...
+              </Typography>
+            </Box>
+            {/* Bottom half: Options */}
+            <Box
+              sx={{
+                p: 2,
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
+              <Button variant="contained">Print</Button>
+              <Button variant="outlined">Continue Editing</Button>
+            </Box>
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setOpenPrintPopup(false)}>Close</Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }
