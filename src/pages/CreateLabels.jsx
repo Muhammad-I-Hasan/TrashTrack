@@ -18,7 +18,6 @@ import PrintIcon from "@mui/icons-material/Print";
 import EditIcon from "@mui/icons-material/Edit";
 import Navbar from "../components/Navbar";
 
-// This code was assisted by ChatGPT, but the design is entirely my own (Jaimie Marchuk).
 export default function CreateLabels() {
   // State to control the visibility of the print confirmation popup.
   const [openPrintPopup, setOpenPrintPopup] = useState(false);
