@@ -45,6 +45,7 @@ export default function Catalog() {
                 bgcolor: "#1E88E5",
                 color: "white",
                 mr: 1,
+                ml: 1,
                 mb: 1,
                 "&:hover": {bgcolor: "#1565C0"},
               }} > Recyclables (Blue Bin)
