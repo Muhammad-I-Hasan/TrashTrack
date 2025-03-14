@@ -43,7 +43,7 @@ export default function Home() {
               Waste Scanner
             </Button>
           </Link>
-          <Link to="/page2" style={{ textDecoration: "none" }}>
+          <Link to="/Catalog" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="primary" fullWidth sx={{ height: "60px", fontSize: "18px", textTransform: "none" }}>
               Waste Catalog
             </Button>
@@ -58,7 +58,7 @@ export default function Home() {
               Locate Depot
             </Button>
           </Link>
-          <Link to="/page5" style={{ textDecoration: "none" }}>
+          <Link to="/createLabels" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="primary" fullWidth sx={{ height: "60px", fontSize: "18px", textTransform: "none" }}>
               Create Waste Labels
             </Button>
