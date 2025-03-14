@@ -1,4 +1,3 @@
-// Style choices were implemented by Sana Abdelhalem with ChatGPT's help.
 import React, { useState } from "react";
 import {
   Box,
@@ -7,17 +6,18 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogActions,
   FormControl,
   InputLabel,
   Select,
   MenuItem,
   TextField,
+  IconButton,
 } from "@mui/material";
 import PrintIcon from "@mui/icons-material/Print";
 import EditIcon from "@mui/icons-material/Edit";
 import Navbar from "../components/Navbar";
 
+// Style choices were implemented by Sana Abdelhalem with ChatGPT's help.
 export default function CreateLabels() {
   // State to control the visibility of the print confirmation popup.
   const [openPrintPopup, setOpenPrintPopup] = useState(false);
@@ -71,7 +71,7 @@ export default function CreateLabels() {
               color: "#333",
             }}
           >
-            Create a Label
+            Create a Waste Label
           </Typography>
 
           {/* Color Dropdown */}
@@ -92,12 +92,13 @@ export default function CreateLabels() {
             </Select>
           </FormControl>
 
-          {/* Title Field */}
+          {/* Title Field with Examples */}
           <TextField
             fullWidth
             id="label-title"
             label="Title"
             placeholder="Type of Trash (e.g., Recyclables)"
+            helperText="Examples: Recyclables, Compost, Hazardous Waste"
             variant="outlined"
             InputProps={{
               readOnly: true,
@@ -153,6 +154,7 @@ export default function CreateLabels() {
             borderRadius: "16px",
             p: 2,
             boxShadow: "0px 8px 20px rgba(0,0,0,0.2)",
+            position: "relative", // Needed for positioning the close icon
           },
         }}
       >
@@ -162,9 +164,22 @@ export default function CreateLabels() {
             fontWeight: "bold",
             pb: 1,
             borderBottom: "1px solid #ddd",
+            position: "relative",
           }}
         >
           Confirm Print
+          <IconButton
+            onClick={() => setOpenPrintPopup(false)}
+            sx={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+              color: "gray",
+              p: 0,
+            }}
+          >
+            x
+          </IconButton>
         </DialogTitle>
         <DialogContent sx={{ py: 3 }}>
           <Box
@@ -192,6 +207,8 @@ export default function CreateLabels() {
                 Item1, Item2, ...
               </Typography>
             </Box>
+            {/* Extra space between preview and action buttons */}
+            <Box sx={{ height: 20 }} />
             {/* Action Buttons */}
             <Box
               sx={{
@@ -230,14 +247,6 @@ export default function CreateLabels() {
             </Box>
           </Box>
         </DialogContent>
-        <DialogActions sx={{ justifyContent: "center", pb: 1 }}>
-          <Button
-            onClick={() => setOpenPrintPopup(false)}
-            sx={{ textTransform: "none", fontWeight: "bold", minWidth: "auto", px: 2 }}
-          >
-            x
-          </Button>
-        </DialogActions>
       </Dialog>
     </Box>
   );
