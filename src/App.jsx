@@ -11,10 +11,10 @@ function App() {
   return (
     <div>
       {/* Navigation Links */}
-      <nav>
+      {/* <nav>
         <Link to="/">Home</Link> | <Link to="/settings">Settings</Link> | <Link to="/trashSchedule">Trash Schedule</Link> | <Link to="/locateDepot">Locate Depot</Link> | <Link to="/Catalog">Catalog</Link> | <Link to="/createLabels">Create Labels</Link>
       
-      </nav>
+      </nav> */}
 
       {/* Define Routes */}
       <Routes>
