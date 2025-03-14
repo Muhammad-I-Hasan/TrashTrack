@@ -58,7 +58,7 @@ function Navbar({ pageTitle }) {
           color: 'black',
         }}
       >
-        <MenuIcon />
+        <MenuIcon fontSize='large'/>
       </IconButton>
       <Menu
         anchorEl={anchorEl}
