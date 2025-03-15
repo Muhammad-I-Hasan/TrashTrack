@@ -1,9 +1,8 @@
-// The code below was assisted in being created via ChatGPT, but the design is my own (Jaimie Marchuk)
-
 import React, { useState, useEffect } from "react";
 import { Box, Button, IconButton, Typography, Dialog, DialogTitle, DialogContent } from "@mui/material";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import CloseIcon from "@mui/icons-material/Close";
+import InfoIcon from "@mui/icons-material/Info"; // New icon for the tiny button
 import Navbar from "../components/Navbar";
 import "../App.css";
 import cameraView from "../images/water-bottle.jpg"; // Import your image
@@ -84,7 +83,19 @@ export default function WasteScanner() {
           )}
           {identified && (
             <Typography variant="body1" sx={{ marginTop: "10px", fontWeight: "bold", color: "green" }}>
-              Image Identified!
+              Image Identified! This is a plastic water bottle and goes into a blue bin or recyclables receptacle. 
+              <IconButton
+                aria-label="info"
+                sx={{
+                  fontSize: "2rem", // Increased font size for a bigger button
+                  marginLeft: "10px",
+                  padding: "8px", // Increased padding for better visual appearance
+                }} 
+                onClick={() => alert("More information about plastic recycling")}
+              >
+                <InfoIcon fontSize="inherit" />
+              </IconButton>
+              Follow this button for more info.
             </Typography>
           )}
         </DialogContent>
