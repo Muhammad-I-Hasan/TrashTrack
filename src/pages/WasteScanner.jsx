@@ -82,8 +82,8 @@ export default function WasteScanner() {
             </Typography>
           )}
           {identified && (
-            <Typography variant="body1" sx={{ marginTop: "10px", fontWeight: "bold", color: "green" }}>
-              Image Identified! This is a plastic water bottle and goes into a blue bin or recyclables receptacle. 
+            <Typography variant="body1" sx={{ marginTop: "0px", fontWeight: "bold", color: "green" }}>
+              Image Identified! This is a plastic water bottle and goes into a blue bin or recyclables receptacle. Follow this button for more info.
               <IconButton
                 aria-label="info"
                 sx={{
@@ -95,7 +95,6 @@ export default function WasteScanner() {
               >
                 <InfoIcon fontSize="inherit" />
               </IconButton>
-              Follow this button for more info.
             </Typography>
           )}
         </DialogContent>
