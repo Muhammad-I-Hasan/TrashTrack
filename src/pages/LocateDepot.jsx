@@ -25,7 +25,19 @@ export default function LocateDepot() {
           flex: 1,
         }}
       >
-        <SearchBar />
+        {/* Only the SearchBar */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",  // explicitly set to row
+            alignItems: "center",  // vertically centers both items
+            justifyContent: "center",
+            marginTop: "1rem"
+          }}
+        >
+          <SearchBar />
+        </div>
+
         <div
           className="tsMap"
           style={{
@@ -66,4 +78,3 @@ export default function LocateDepot() {
     </div>
   );
 }
-

@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 import MenuIcon from '@mui/icons-material/Menu';
+import CameraAltIcon from '@mui/icons-material/CameraAlt'; // For "Waste Scanner"
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'; // For "Waste Catalog"
+import ScheduleIcon from '@mui/icons-material/Schedule'; // For "Trash Schedule"
+import LocationOnIcon from '@mui/icons-material/LocationOn'; // For "Locate Depot"
+import LabelIcon from '@mui/icons-material/Label'; // For "Create Labels"
+import SettingsIcon from '@mui/icons-material/Settings'; // For "Settings"
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -60,6 +66,7 @@ function Navbar({ pageTitle }) {
       >
         <MenuIcon fontSize='large'/>
       </IconButton>
+      
       <Menu
         anchorEl={anchorEl}
         open={open}
@@ -73,20 +80,40 @@ function Navbar({ pageTitle }) {
           horizontal: 'right',
         }}
       >
+        {/* Waste Scanner Menu Item */}
         <MenuItem component={Link} to="/waste-scanner" onClick={handleMenuClose}>
+          <CameraAltIcon sx={{ marginRight: "10px" }} />
           Waste Scanner
         </MenuItem>
+        
+        {/* Waste Catalog Menu Item */}
         <MenuItem component={Link} to="/Catalog" onClick={handleMenuClose}>
+          <LibraryBooksIcon sx={{ marginRight: "10px" }} />
           Waste Catalog
         </MenuItem>
+
+        {/* Trash Schedule Menu Item */}
         <MenuItem component={Link} to="/trashSchedule" onClick={handleMenuClose}>
+          <ScheduleIcon sx={{ marginRight: "10px" }} />
           Trash Schedule
         </MenuItem>
+
+        {/* Locate Depot Menu Item */}
         <MenuItem component={Link} to="/locateDepot" onClick={handleMenuClose}>
+          <LocationOnIcon sx={{ marginRight: "10px" }} />
           Locate Depot
         </MenuItem>
+
+        {/* Create Labels Menu Item */}
         <MenuItem component={Link} to="/createLabels" onClick={handleMenuClose}>
+          <LabelIcon sx={{ marginRight: "10px" }} />
           Create Labels
+        </MenuItem>
+
+        {/* Settings Menu Item (added at the bottom of the menu) */}
+        <MenuItem component={Link} to="/settings" onClick={handleMenuClose}>
+          <SettingsIcon sx={{ marginRight: "10px" }} />
+          Settings
         </MenuItem>
       </Menu>
     </nav>
