@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Autocomplete } from "@react-google-maps/api";
+import "./MapSearchBar.css";
 
 export default function MapSearchBar({ onPlaceChanged }) {
   const [autocomplete, setAutocomplete] = useState(null);
@@ -26,16 +27,7 @@ export default function MapSearchBar({ onPlaceChanged }) {
       <input
         type="text"
         placeholder="Search location..."
-        style={{
-          boxSizing: "border-box",
-          border: "1px solid #ccc",
-          width: "300px",
-          height: "40px",
-          padding: "0 12px",
-          borderRadius: "4px",
-          boxShadow: "0 2px 6px rgba(0,0,0,0.3)",
-          fontSize: "16px",
-        }}
+        className="map-search-bar-input"
       />
     </Autocomplete>
   );

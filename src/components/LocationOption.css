@@ -1,0 +1,48 @@
+.location-option {
+    background-color: #fff;
+    padding: 1rem;
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+    width: 80vw;
+    margin-top: 1rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .location-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .location-option-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .location-option-text {
+    text-align: left;
+  }
+  
+  .location-option-title {
+    margin: 0;
+    font-size: 1.5rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .location-option-distance,
+  .location-option-info {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .location-option-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+  
