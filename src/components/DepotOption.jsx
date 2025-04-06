@@ -1,34 +1,29 @@
 import React from 'react';
+import DirectionsIcon from '@mui/icons-material/Directions'; // MUI Directions icon
+import './DepotOption.css'; // Import the CSS file
 
-export default function DepotOption({ name, distance }) {
+export default function DepotOption({ name, distance, lat, lng, onHover = () => {}, onLeave = () => {} }) {
   return (
-    <div style={{ 
-      backgroundColor: 'white', 
-      padding: '1rem', 
-      border: '1px solid black', 
-      borderRadius: '8px', 
-      width: '80vw', 
-      marginTop: '1rem',
-      boxShadow: '0px 2px 8px rgba(0,0,0,0.2)' // Added shadow
-    }}>
-      {/* Header row with the large text name and the icon */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start'
-      }}>
-        <div style={{ textAlign: 'left' }}>
-          <h1 style={{
-            margin: 0,
-            fontSize: '1.5rem',
-            whiteSpace: 'normal',         // Allows text to wrap
-            wordBreak: 'break-word'         // Breaks long words if needed
-          }}>
-            {name}
-          </h1>
-          <p style={{ margin: '0' }}>{distance} km</p>
+    <a
+      href={`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="depot-option-link"
+      title="Get directions on Google Maps"
+      onMouseEnter={() => onHover({ name, distance, lat, lng })}
+      onMouseLeave={onLeave}
+    >
+      <div className="depot-option">
+        <div className="depot-option-content">
+          <div className="depot-option-text">
+            <h1 className="depot-option-title">{name}</h1>
+            <p className="depot-option-distance">{distance}</p>
+          </div>
+          <div className="depot-option-icon">
+            <DirectionsIcon style={{ fontSize: 36, color: '#007bff' }} />
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
