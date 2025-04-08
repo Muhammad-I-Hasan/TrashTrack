@@ -1,3 +1,5 @@
+// This page was designed by us, but code was assisted in generating with ChatGPT
+
 import React from "react";
 import { Button, Box, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -66,7 +68,7 @@ export default function Home() {
           <Link to="/createLabels" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="primary" fullWidth sx={{ height: "60px", fontSize: "18px", textTransform: "none", display: "flex", alignItems: "center" }}>
               <LabelIcon sx={{ marginRight: "10px" }} />
-              Create Waste Labels
+              Make a Waste Label
             </Button>
           </Link>
         </Box>
