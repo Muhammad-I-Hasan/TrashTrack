@@ -6,6 +6,7 @@ import LocateDepot from "./pages/LocateDepot";
 import CreateLabels from "./pages/CreateLabels";
 import WasteScanner from "./pages/WasteScanner";
 import Catalog from "./pages/Catalog";
+import WaterBottleCatalogPage from "./pages/WaterBottlleCatalogPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/waste-scanner" element={<WasteScanner />} />
         <Route path="/Catalog" element={<Catalog />} />
+        <Route path="/waterBottleCatalog" element={<WaterBottleCatalogPage />} />
       </Routes>
     </div>
   );
