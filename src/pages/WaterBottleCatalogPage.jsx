@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Navbar from "../components/Navbar";
-import waterBottleImage from "../images/water-bottle.jpg";
+import waterBottleImage from "../images/NPC-Water-Bottle.png";
 import { useNavigate } from "react-router-dom";
 
 export default function WaterBottleCatalogPage() {
@@ -68,8 +68,8 @@ export default function WaterBottleCatalogPage() {
           src={waterBottleImage}
           alt="Plastic Water Bottle"
           sx={{
-            maxWidth: "360px",
-            maxHeight: "430px",
+            maxWidth: "320px",
+            maxHeight: "600px",
             objectFit: "contain",
             margin: "0 auto 16px",
             borderRadius: "8px",

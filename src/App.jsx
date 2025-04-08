@@ -6,7 +6,7 @@ import LocateDepot from "./pages/LocateDepot";
 import CreateLabels from "./pages/CreateLabels";
 import WasteScanner from "./pages/WasteScanner";
 import Catalog from "./pages/Catalog";
-import WaterBottleCatalogPage from "./pages/WaterBottlleCatalogPage";
+import WaterBottleCatalogPage from "./pages/WaterBottleCatalogPage";
 
 function App() {
   return (

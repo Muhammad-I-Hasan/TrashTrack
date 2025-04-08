@@ -1,3 +1,5 @@
+// This page was designed by us, but code was assisted in generating with ChatGPT
+
 import React from "react";
 import { Button, Box, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
