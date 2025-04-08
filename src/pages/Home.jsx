@@ -66,7 +66,7 @@ export default function Home() {
           <Link to="/createLabels" style={{ textDecoration: "none" }}>
             <Button variant="contained" color="primary" fullWidth sx={{ height: "60px", fontSize: "18px", textTransform: "none", display: "flex", alignItems: "center" }}>
               <LabelIcon sx={{ marginRight: "10px" }} />
-              Create Waste Labels
+              Make a Waste Label
             </Button>
           </Link>
         </Box>
