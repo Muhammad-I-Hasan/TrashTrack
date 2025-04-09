@@ -8,6 +8,7 @@ import WasteScanner from "./pages/WasteScanner";
 import Catalog from "./pages/Catalog";
 import WaterBottleCatalogPage from "./pages/WaterBottleCatalogPage";
 import CatalogSelect from "./pages/CatalogSelect"
+import ItemDetail from "./pages/ItemDetailPage"
 
 import { LoadScript } from "@react-google-maps/api";
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Catalog" element={<Catalog />} />
           <Route path="/CatalogSelect" element={<CatalogSelect />} />
           <Route path="/waterBottleCatalog" element={<WaterBottleCatalogPage />} />
+          <Route path="/catalog/:itemName" element={<ItemDetail />} />
       </Routes>
       </LoadScript>
     </div>
