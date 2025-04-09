@@ -61,17 +61,8 @@ const sortedItems = [...searchFilteredItems].sort((a, b) => {
 });
 
   return (
-    <div
-      className="page"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100vh", // Ensuring the height matches the other pages
-        overflow: "hidden",
-      }}
-    >
+    <div className="p-6 bg-gray-100 min-h-screen">
       <Navbar pageTitle={"Catalog"} />
-      
 
       <div
         className="content"
@@ -80,15 +71,13 @@ const sortedItems = [...searchFilteredItems].sort((a, b) => {
         style={{
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
           flex: 1,
-          alignItems: "center", // Center content horizontally
-          padding: "10px", // Padding for spacing
+          height: "90vh",
         }}
       >
-        <div style={{ width: "100%", display: "flex", justifyContent: "center", marginBottom: "20px" }}>
-          <SearchBar />
-        </div>
-
+        <SearchBar />
         <div>
           <label className="text-lg font-bold">Filter By:</label>
           <div className="flex space-x-2 mt-4 flex-wrap justify-center">
@@ -104,7 +93,7 @@ const sortedItems = [...searchFilteredItems].sort((a, b) => {
                 "&:hover": { bgcolor: "#1565C0" },
               }}
             >
-              Blue Bin
+              Recyclables (Blue Bin)
             </Button>
 
             <Button
@@ -118,7 +107,7 @@ const sortedItems = [...searchFilteredItems].sort((a, b) => {
                 "&:hover": { bgcolor: "#2E7D32" },
               }}
             >
-              Green Bin
+              Compost (Green Bin)
             </Button>
 
             <Button
@@ -132,7 +121,7 @@ const sortedItems = [...searchFilteredItems].sort((a, b) => {
                 "&:hover": { bgcolor: "#000000" },
               }}
             >
-              Black Bin
+              Trash (Black Bin)
             </Button>
 
             <Button
@@ -168,10 +157,10 @@ const sortedItems = [...searchFilteredItems].sort((a, b) => {
         <div
           className="mt-8 w-full max-w-md"
           style={{
-            maxHeight: "500px", // Adjusted max height for grid
+            maxHeight: "400px",
             overflowY: "auto",
             display: "grid",
-            gridTemplateColumns: "repeat(3, 100px)", // Restoring 3-column layout
+            gridTemplateColumns: "repeat(3, 100px)",
             gap: "15px",
             justifyItems: "center",
             alignItems: "center",
@@ -186,8 +175,8 @@ const sortedItems = [...searchFilteredItems].sort((a, b) => {
               onClick={() => handleNavToPage(item.name)}
               variant="contained"
               style={{
-                width: "100px", // Keeping width consistent
-                height: "120px", // Slightly taller items vertically
+                width: "100px",
+                height: "100px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -196,7 +185,6 @@ const sortedItems = [...searchFilteredItems].sort((a, b) => {
                 backgroundColor: "#f5f5f5",
                 color: "#333",
                 boxShadow: "2px 2px 6px rgba(0,0,0,0.2)",
-                marginTop: "15px",
               }}
             >
               {item.icon}
