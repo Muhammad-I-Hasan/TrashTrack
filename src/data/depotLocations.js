@@ -1,10 +1,11 @@
 // depotLocations.js
 const depotLocations = [
-    { name: "Depot 1", lat: 51.0447, lng: -114.0719 }, // Center (Downtown Calgary)
-    { name: "Depot 2", lat: 51.0547, lng: -114.0719 }, // Slightly north
-    { name: "Depot 3", lat: 51.0347, lng: -114.0719 }, // Slightly south
-    { name: "Depot 4", lat: 51.0447, lng: -114.0619 }, // Slightly east
-    { name: "Depot 5", lat: 51.0447, lng: -114.0819 }, // Slightly west
+    { name: "Bowness Bottle Depot", lat: 51.069341, lng: -114.161211},
+    { name: "Uptown Bottle Depot", lat: 51.043332, lng: -114.076149 },
+    { name: "North Hill Bottle Depot", lat: 51.090389, lng: -114.058011 },
+    { name: "Chinook Bottle Depot", lat: 50.997713, lng: -114.063329 },
+    { name: "Trail Bottle Depot", lat: 50.977321, lng: -114.073943 },
+    { name: "Happy Can Bottle Depot", lat: 51.058319, lng: -113.986205 },
   ];
   
   export default depotLocations;
