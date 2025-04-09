@@ -1,24 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import { Button } from "@mui/material";
 import Navbar from "../components/Navbar";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useNavigate } from "react-router-dom";
+
 import { ShoppingBag, LocalDrink, Restaurant, DinnerDining, Archive, BatteryFull, Liquor, Smartphone, Newspaper, Apple, Checkroom, LocalCafe } from "@mui/icons-material";
 
 export default function Catalog() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [sortOption, setSortOption] = useState("popular");
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+  
+
   const items = [
-    { name: "Plastic Bag", icon: <ShoppingBag fontSize="large" /> },
-    { name: "Water Bottle", icon: <LocalDrink fontSize="large" /> },
-    { name: "Plastic Cutlery", icon: <Restaurant fontSize="large" /> },
-    { name: "Food Scraps", icon: <DinnerDining fontSize="large" /> },
-    { name: "Cardboard", icon: <Archive fontSize="large" /> },
-    { name: "Battery", icon: <BatteryFull fontSize="large" /> },
-    { name: "Glass Bottle", icon: <Liquor fontSize="large" /> },
-    { name: "Phone/Tablet", icon: <Smartphone fontSize="large" /> },
-    { name: "Newspaper", icon: <Newspaper fontSize="large" /> },
-    { name: "Apple Core", icon: <Apple fontSize="large" /> },
-    { name: "Clothing", icon: <Checkroom fontSize="large" /> },
-    { name: "Styrofoam Cup", icon: <LocalCafe fontSize="large" /> },
+    { name: "Plastic Bag", icon: <ShoppingBag fontSize="large" />, category: "trash" },
+    { name: "Water Bottle", icon: <LocalDrink fontSize="large" />, category: "recyclable" },
+    { name: "Plastic Cutlery", icon: <Restaurant fontSize="large" />, category: "trash" },
+    { name: "Food Scraps", icon: <DinnerDining fontSize="large" />, category: "compost" },
+    { name: "Cardboard", icon: <Archive fontSize="large" />, category: "recyclable" },
+    { name: "Battery", icon: <BatteryFull fontSize="large" />, category: "trash" },
+    { name: "Glass Bottle", icon: <Liquor fontSize="large" />, category: "recyclable" },
+    { name: "Tablet", icon: <Smartphone fontSize="large" />, category: "trash" },
+    { name: "Newspaper", icon: <Newspaper fontSize="large" />, category: "recyclable" },
+    { name: "Apple Core", icon: <Apple fontSize="large" />, category: "compost" },
+    { name: "Clothing", icon: <Checkroom fontSize="large" />, category: "trash" },
+    { name: "Styrofoam Cup", icon: <LocalCafe fontSize="large" />, category: "trash" },
   ];
+
+  
+  const handleChange = (e) => {
+    setSortOption(e.target.value);
+  };
+
+  const handleNavToPage = (itemName) => {
+    navigate(`/catalog/${itemName}`);
+  };
+
+  const filteredItems = selectedCategory
+  ? items.filter((item) => item.category === selectedCategory)
+  : items;
+
+const searchFilteredItems = searchTerm
+  ? filteredItems.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  : filteredItems;
+
+const sortedItems = [...searchFilteredItems].sort((a, b) => {
+  if (sortOption === "az") {
+    return a.name.localeCompare(b.name);
+  } else if (sortOption === "za") {
+    return b.name.localeCompare(a.name);
+  }
+  return 0;
+});
 
   return (
     <div
@@ -31,10 +71,12 @@ export default function Catalog() {
       }}
     >
       <Navbar pageTitle={"Catalog"} />
+      
 
-      {/* Content Section */}
       <div
         className="content"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -43,22 +85,22 @@ export default function Catalog() {
           padding: "10px", // Padding for spacing
         }}
       >
-        {/* Centered Search Bar */}
         <div style={{ width: "100%", display: "flex", justifyContent: "center", marginBottom: "20px" }}>
           <SearchBar />
         </div>
 
         <div>
-          <label className="text-lg font-bold">View:</label>
-          <div className="flex space-x-2 mt-4">
+          <label className="text-lg font-bold">Filter By:</label>
+          <div className="flex space-x-2 mt-4 flex-wrap justify-center">
             <Button
               variant="contained"
+              onClick={() => setSelectedCategory("recyclable")}
               sx={{
                 bgcolor: "#1E88E5",
                 color: "white",
+                mb: 1,
                 mr: 1,
                 ml: 1,
-                mb: 1,
                 "&:hover": { bgcolor: "#1565C0" },
               }}
             >
@@ -67,6 +109,7 @@ export default function Catalog() {
 
             <Button
               variant="contained"
+              onClick={() => setSelectedCategory("compost")}
               sx={{
                 bgcolor: "#43A047",
                 color: "white",
@@ -80,30 +123,48 @@ export default function Catalog() {
 
             <Button
               variant="contained"
+              onClick={() => setSelectedCategory("trash")}
               sx={{
                 bgcolor: "#333333",
                 color: "white",
+                mr: 1,
                 mb: 1,
                 "&:hover": { bgcolor: "#000000" },
               }}
             >
               Black Bin
             </Button>
+
+            <Button
+              variant="contained"
+              onClick={() => setSelectedCategory(null)}
+              sx={{
+                mb: 1,
+                bgcolor: "#969699",
+                color: "white",
+                "&:hover": { bgcolor: "#69696e"},
+              }}
+            >
+              Show All Items
+            </Button>
           </div>
         </div>
 
-        <div className="mt-8" style={{ marginTop: "15px", marginBottom: "15px" }}>
-          <label className="text-lg font-semibold" style={{ marginTop: "10px" }}>
-            Sort By:
-          </label>
-          <select className="ml-2 p-2 border rounded-md">
-            <option>Most Popular</option>
-            <option>Alphabetical (A-Z)</option>
-            <option>Alphabetical (Z-A)</option>
-          </select>
-        </div>
+        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+          <InputLabel id="demo-select-small-label">Sort By:</InputLabel>
+          <Select
+            labelId="demo-select-small-label"
+            id="demo-select-small"
+            value={sortOption}
+            label="Sort By:"
+            onChange={handleChange}
+          >
+            <MenuItem value={"popular"}>Most Popular</MenuItem>
+            <MenuItem value={"az"}>Alphabetical (A-Z)</MenuItem>
+            <MenuItem value={"za"}>Alphabetical (Z-A)</MenuItem>
+          </Select>
+        </FormControl>
 
-        {/* Items Grid */}
         <div
           className="mt-8 w-full max-w-md"
           style={{
@@ -119,9 +180,10 @@ export default function Catalog() {
             padding: "10px",
           }}
         >
-          {items.map((item, index) => (
+          {sortedItems.map((item, index) => (
             <Button
               key={index}
+              onClick={() => handleNavToPage(item.name)}
               variant="contained"
               style={{
                 width: "100px", // Keeping width consistent
@@ -138,7 +200,9 @@ export default function Catalog() {
               }}
             >
               {item.icon}
-              <span style={{ marginTop: "10px", fontSize: "15px" }}>{item.name}</span>
+              <span style={{ marginTop: "10px", fontSize: "15px" }}>
+                {item.name}
+              </span>
             </Button>
           ))}
         </div>
