@@ -93,7 +93,7 @@ export default function PlasticBagCatalogPage() {
               This item belongs in the <strong>green compost bin</strong>.
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: "6px" }}>
-              Apple cores should be put in the green bin since they are a food item and must be disposed away from landfills
+              Apple cores should be put in the green bin since they are a food item and must be disposed away from landfills.
             </Typography>
             <Typography variant="body2">
               <strong>Decomposition Time:</strong> ~2 - 6 months

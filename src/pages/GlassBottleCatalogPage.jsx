@@ -93,7 +93,7 @@ export default function PlasticBagCatalogPage() {
               This item belongs in the <strong>blue trash bin</strong>.
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: "6px" }}>
-              Glass bottles, broken or unbroken can be put loose in the blue bins since they are recyclable. You may also take them to a bottle depot facility
+              Glass bottles, broken or unbroken can be put loose in the blue bins since they are recyclable. You may also take them to a bottle depot facility.
             </Typography>
             <Typography variant="body2">
               <strong>Decomposition Time:</strong> ~1 million years

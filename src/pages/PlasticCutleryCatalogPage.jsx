@@ -93,7 +93,7 @@ export default function PlasticCutleryCatalogPage() {
             This item belongs in the <strong>black trash bin</strong>.
           </Typography>
           <Typography variant="body2" sx={{ marginBottom: "6px" }}>
-            Plastic cutlery are not recyclable and are a one-time use item. This should be thrown in the trash
+            Plastic cutlery are not recyclable and are a one-time use item. This should be thrown in the trash.
           </Typography>
           <Typography variant="body2">
             <strong>Decomposition Time:</strong> ~1000 years

@@ -93,7 +93,7 @@ export default function PlasticBagCatalogPage() {
               This item belongs in the <strong>blue recycling bin</strong>.
             </Typography>
             <Typography variant="body2" sx={{ marginBottom: "6px" }}>
-              Cardboard should be broken down and placed in the blue bin, as they are reusable
+              Cardboard should be broken down and placed in the blue bin, as they are reusable.
             </Typography>
             <Typography variant="body2">
               <strong>Decomposition Time:</strong> ~2 months
