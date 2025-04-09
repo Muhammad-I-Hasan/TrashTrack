@@ -8,16 +8,24 @@ import theme from "./theme";
 import CssBaseline from '@mui/material/CssBaseline';
 import GlobalStyles from '@mui/material/GlobalStyles';
 
+// Moiz Added this
+import { AppProvider } from "./context/AppContext";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <GlobalStyles styles={{
-          body: { fontFamily: 'Roboto, Helvetica, Arial, sans-serif' },
-        }} />
+      <GlobalStyles
+        styles={{
+          body: { fontFamily: "Roboto, Helvetica, Arial, sans-serif" },
+        }}
+      />
       <BrowserRouter>
-        <App />
+        {/* ✅ Wrap App in AppProvider here */}
+        <AppProvider>
+          <App />
+        </AppProvider> 
       </BrowserRouter>
     </ThemeProvider>
-  </StrictMode>,
+  </StrictMode>
 );
