@@ -119,28 +119,6 @@ export default function TrashSchedule() {
             highlightedDepot={highlightedLocation}
           />
         </div>
-
-        {/* "Edit Alerts" button placed below the map and above the list */}
-        <div
-          style={{
-            width: "80vw",
-            padding: "0 1rem", // optional horizontal padding if desired
-            marginTop: "1rem",
-            // marginBottom: "0.5rem", // slight padding below the button container
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Button 
-            variant="contained" 
-            color="primary" 
-            style={{ width: "100%" }} // Button spans full width of its container
-          >
-            Edit Alerts
-          </Button>
-        </div>
-
-
         {/* List of neighborhoods with schedule info */}
         <div
           style={{
