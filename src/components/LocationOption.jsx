@@ -1,37 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Snackbar } from '@mui/material';
+import './LocationOption.css';
 
-export default function LocationOption({ name }) {
+export default function LocationOption({ 
+  name, 
+  trashDay, 
+  recyclingDay 
+}) {
+  const [notificationEnabled, setNotificationEnabled] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+
+  const handleToggle = () => {
+    setNotificationEnabled(prev => {
+      const newStatus = !prev;
+      if (newStatus) {
+        setOpenSnackbar(true);
+      }
+      return newStatus;
+    });
+  };
+
+  const handleSnackbarClose = (event, reason) => {
+    if (reason === 'clickaway') return;
+    setOpenSnackbar(false);
+  };
+
   return (
-    <div style={{ 
-      backgroundColor: 'white', 
-      padding: '1rem', 
-      border: '1px solid black', 
-      borderRadius: '8px', 
-      width: '80vw', 
-      marginTop: '1rem',
-      boxShadow: '0px 2px 8px rgba(0,0,0,0.2)' // Added shadow
-    }}>
-      {/* Header row with the large text name and the icon */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start'
-      }}>
-        <div style={{ textAlign: 'left' }}>
-          <h1 style={{
-            margin: 0,
-            fontSize: '1.5rem',
-            whiteSpace: 'normal',         // Allows text to wrap
-            wordBreak: 'break-word'         // Breaks long words if needed
-          }}>
-            {name}
-          </h1>
-          <p style={{ margin: '0' }}>Trash Day: Wednesday</p>
-          <p style={{ margin: '0' }}>Compost Day: Thursday</p>
+    <>
+      <div 
+        className="location-option" 
+        onClick={handleToggle}
+      >
+        <div className="location-option-content">
+          <div className="location-option-text">
+            <h1 className="location-option-title">{name}</h1>
+            {trashDay && (
+              <p className="location-option-info" style={{ color: 'green' }}>
+                Trash: {trashDay}
+              </p>
+            )}
+            {recyclingDay && (
+              <p className="location-option-info" style={{ color: 'blue' }}>
+                Recycling: {recyclingDay}
+              </p>
+            )}
+          </div>
+          <div className="location-option-icon">
+            <NotificationsIcon 
+              style={{ fontSize: 36, color: notificationEnabled ? '#007bff' : 'grey' }} 
+            />
+          </div>
         </div>
-        <NotificationsIcon style={{ color: '#777', fontSize: '3rem' }} />
       </div>
-    </div>
+      <Snackbar 
+        open={openSnackbar}
+        autoHideDuration={3000}
+        onClose={handleSnackbarClose}
+        message={`Notification Enabled for "${name}"`}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      />
+    </>
   );
 }

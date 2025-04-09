@@ -1,0 +1,46 @@
+.map-search-bar-input {
+    box-sizing: border-box;
+    border: 1px solid grey !important;
+    width: 300px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 18px !important;
+    font-family: "Roboto", sans-serif !important;
+    background-image: none !important; /* Remove any default icon */
+    transition: border-color 0.3s ease;
+  }
+  
+  .map-search-bar-input:focus {
+    outline: none;
+    border-color: #4CAF50 !important; /* Use your green color when selected */
+  }
+  
+  /* Autocomplete container styling */
+  .pac-container {
+    font-family: "Roboto", sans-serif !important;
+    font-size: 18px !important;
+    background-color: #fff !important;
+    border: 1px solid #4CAF50 !important;
+    border-radius: 4px !important;
+    z-index: 10000 !important;
+  }
+  
+  /* Style each autocomplete item */
+  .pac-item {
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+  }
+  
+  /* Hover state for autocomplete items */
+  .pac-item:hover {
+    background-color: #f0f0f0 !important;
+  }
+  
+  /* Style the selected autocomplete item */
+  .pac-item-selected {
+    background-color: #e0e0e0 !important;
+  }
+  

@@ -8,6 +8,10 @@ import WasteScanner from "./pages/WasteScanner";
 import Catalog from "./pages/Catalog";
 import WaterBottleCatalogPage from "./pages/WaterBottleCatalogPage";
 
+import { LoadScript } from "@react-google-maps/api";
+
+const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // or VITE_GOOGLE_MAPS_API_KEY if using Vite
+
 function App() {
   return (
     <div>
@@ -18,16 +22,18 @@ function App() {
       </nav> */}
 
       {/* Define Routes */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/trashSchedule" element={<TrashSchedule />} />
-        <Route path="/locateDepot" element={<LocateDepot />} />
-        <Route path="/createLabels" element={<CreateLabels />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/waste-scanner" element={<WasteScanner />} />
-        <Route path="/Catalog" element={<Catalog />} />
-        <Route path="/waterBottleCatalog" element={<WaterBottleCatalogPage />} />
+      <LoadScript googleMapsApiKey={apiKey} libraries={["places"]}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/trashSchedule" element={<TrashSchedule />} />
+          <Route path="/locateDepot" element={<LocateDepot />} />
+          <Route path="/createLabels" element={<CreateLabels />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/waste-scanner" element={<WasteScanner />} />
+          <Route path="/Catalog" element={<Catalog />} />
+          <Route path="/waterBottleCatalog" element={<WaterBottleCatalogPage />} />
       </Routes>
+      </LoadScript>
     </div>
   );
 }

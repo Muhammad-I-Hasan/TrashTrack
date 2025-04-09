@@ -1,0 +1,57 @@
+.depot-option-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .depot-option {
+    background-color: #fff;
+    padding: 1rem;
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 12px;
+    width: 80vw;
+    margin-top: 1rem;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .depot-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* New layout: row for text and icon */
+  .depot-option-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Text container takes the remaining space */
+  .depot-option-text {
+    flex: 1;
+  }
+  
+  .depot-option-title {
+    margin: 0;
+    font-size: 1.5rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .depot-option-distance {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #28a745;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Icon container on the right, with no extra vertical margin */
+  .depot-option-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; /* Optional space between text and icon */
+  }
+  
