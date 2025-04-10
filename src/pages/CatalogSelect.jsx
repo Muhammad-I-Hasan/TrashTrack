@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
-import { Button } from "@mui/material";
+import { Button, Box, Typography, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { ShoppingBag, LocalDrink, Restaurant, DinnerDining, Archive, BatteryFull, Liquor, Smartphone, Newspaper, Apple, Checkroom, LocalCafe } from "@mui/icons-material";
+import {
+  ShoppingBag,
+  LocalDrink,
+  Restaurant,
+  DinnerDining,
+  Archive,
+  BatteryFull,
+  Liquor,
+  Smartphone,
+  Newspaper,
+  Apple,
+  Checkroom,
+  LocalCafe
+} from "@mui/icons-material";
 
-export default function Catalog() {
+export default function CatalogSelect() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [sortOption, setSortOption] = useState("popular");
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +27,8 @@ export default function Catalog() {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate("/CreateLabels");
+    // Navigate back to Create Labels with selected items
+    navigate("/CreateLabels", { state: { selectedItems } });
   };
 
   const items = [
@@ -42,8 +51,8 @@ export default function Catalog() {
   };
 
   const filteredItems = selectedCategory
-  ? items.filter((item) => item.category === selectedCategory)
-  : items;
+    ? items.filter((item) => item.category === selectedCategory)
+    : items;
 
   const searchFilteredItems = searchTerm
     ? filteredItems.filter((item) =>
@@ -61,11 +70,14 @@ export default function Catalog() {
   });
 
   const toggleSelectItem = (itemName) => {
-    setSelectedItems(prev =>
-      prev.includes(itemName)
-        ? prev.filter(name => name !== itemName)
-        : [...prev, itemName]
-    );
+    setSelectedItems((prev) => {
+      const isSelected = prev.includes(itemName);
+      const updatedSelection = isSelected
+        ? prev.filter((name) => name !== itemName)
+        : [...prev, itemName];
+      console.log(`Toggled selection for "${itemName}". New selection:`, updatedSelection);
+      return updatedSelection;
+    });
   };
 
   return (
@@ -74,8 +86,6 @@ export default function Catalog() {
 
       <div
         className="content"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -113,7 +123,7 @@ export default function Catalog() {
                 color: "white",
                 mt: 2,
                 mr: 3,
-                "&:hover": { bgcolor: "#990e0e"},
+                "&:hover": { bgcolor: "#990e0e" },
               }}
               onClick={() => setSelectedItems([])}
             >
@@ -127,7 +137,7 @@ export default function Catalog() {
                 color: "white",
                 mt: 2,
                 ml: 3,
-                "&:hover": { bgcolor: "#2E7D32"},
+                "&:hover": { bgcolor: "#2E7D32" },
               }}
               onClick={handleBack}
             >
@@ -139,64 +149,64 @@ export default function Catalog() {
         )}
 
         <div>
-            <label className="text-lg font-bold">Filter By:</label>
-            <div className="flex space-x-2 mt-4 flex-wrap justify-center">
+          <label className="text-lg font-bold">Filter By:</label>
+          <div className="flex space-x-2 mt-4 flex-wrap justify-center">
             <Button
-                variant="contained"
-                onClick={() => setSelectedCategory("recyclable")}
-                sx={{
+              variant="contained"
+              onClick={() => setSelectedCategory("recyclable")}
+              sx={{
                 bgcolor: "#1E88E5",
                 color: "white",
                 mb: 1,
                 mr: 1,
                 ml: 1,
                 "&:hover": { bgcolor: "#1565C0" },
-                }}
+              }}
             >
-                Recyclables (Blue Bin)
+              Recyclables (Blue Bin)
             </Button>
 
             <Button
-                variant="contained"
-                onClick={() => setSelectedCategory("compost")}
-                sx={{
+              variant="contained"
+              onClick={() => setSelectedCategory("compost")}
+              sx={{
                 bgcolor: "#43A047",
                 color: "white",
                 mr: 1,
                 mb: 1,
                 "&:hover": { bgcolor: "#2E7D32" },
-                }}
+              }}
             >
-                Compost (Green Bin)
+              Compost (Green Bin)
             </Button>
 
             <Button
-                variant="contained"
-                onClick={() => setSelectedCategory("trash")}
-                sx={{
+              variant="contained"
+              onClick={() => setSelectedCategory("trash")}
+              sx={{
                 bgcolor: "#333333",
                 color: "white",
                 mr: 1,
                 mb: 1,
                 "&:hover": { bgcolor: "#000000" },
-                }}
+              }}
             >
-                Trash (Black Bin)
+              Trash (Black Bin)
             </Button>
 
             <Button
-                variant="contained"
-                onClick={() => setSelectedCategory(null)}
-                sx={{
+              variant="contained"
+              onClick={() => setSelectedCategory(null)}
+              sx={{
                 mb: 1,
                 bgcolor: "#969699",
                 color: "white",
-                "&:hover": { bgcolor: "#69696e"},
-                }}
+                "&:hover": { bgcolor: "#69696e" },
+              }}
             >
-                Show All Items
+              Show All Items
             </Button>
-            </div>
+          </div>
         </div>
 
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
