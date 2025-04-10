@@ -8,6 +8,9 @@ import theme from "./theme";
 import CssBaseline from '@mui/material/CssBaseline';
 import GlobalStyles from '@mui/material/GlobalStyles';
 
+// ✅ Import your context provider
+import { AppProvider } from "./context/AppContext";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
@@ -16,7 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           body: { fontFamily: 'Roboto, Helvetica, Arial, sans-serif' },
         }} />
       <BrowserRouter>
-        <App />
+        <AppProvider>
+          <App />
+        </AppProvider>
       </BrowserRouter>
     </ThemeProvider>
   </StrictMode>,
