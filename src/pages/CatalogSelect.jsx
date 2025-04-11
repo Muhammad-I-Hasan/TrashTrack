@@ -84,17 +84,6 @@ export default function CatalogSelect() {
     <div className="p-6 bg-gray-100 min-h-screen">
       <Navbar pageTitle={"Catalog Select"} />
 
-      <div
-        className="content"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          flex: 1,
-          height: "90vh",
-        }}
-      > 
         <Box
           onClick={handleBack}
           sx={{
@@ -109,10 +98,21 @@ export default function CatalogSelect() {
             Back to Labels
           </Typography>
         </Box>
-        <SearchBar
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        
+        <div
+        className="content"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          flex: 1,
+          height: "90vh",
+        }}
+      >
+        <SearchBar />
 
         {selectedItems.length > 0 && (
           <div className="flex items-center mt-4 mb-2 space-x-4">
