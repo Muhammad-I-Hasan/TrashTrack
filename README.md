@@ -21,3 +21,14 @@ Make a Waste Label - User can create their own waste labels by selecting items a
 
 Settings - User can change the language and enable dark mode, as well as disable notifications and other customizations
 
+
+### Developed By:
+ - Muhammad Hasan
+
+ - Jaimie March
+
+ - Sana Abdelhalem
+
+ - Moiz Siddiqui
+
+ - Miguel Fuentes
