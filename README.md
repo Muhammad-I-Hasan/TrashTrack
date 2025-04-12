@@ -1,10 +1,14 @@
 # How to Run TrashTrack
+## Hosted on:
+https://muhammad-i-hasan.github.io/TrashTrack/
 
+## If running app Locally:
 1. Pull the repository
-1. go to /TrashTrack
-2. npm install
-3. npm run dev
-4. The app requires a google maps api key as well as enabling Places API
+2. switch to dev_branch
+3. npm install
+4. npm run dev
+5. The app requires a google maps api key as well as enabling Places API (in ur .env file put VITE_GOOGLE_MAPS_API_KEY=your_api_key_here)
+   
 NOTE: app is intended to be used on smaller screens but is still completely functional on desktop screens
 
 ## Functionality Implemented
