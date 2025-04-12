@@ -24,7 +24,6 @@ function App() {
       </nav> */}
 
       {/* Define Routes */}
-      <HashRouter>
         <LoadScript googleMapsApiKey={apiKey} libraries={["places"]}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -39,7 +38,6 @@ function App() {
             <Route path="/catalog/:itemName" element={<ItemDetail />} />
         </Routes>
         </LoadScript>
-      </HashRouter>
     </div>
   );
 }

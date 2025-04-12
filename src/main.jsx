@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import App from "./App";
 import { StrictMode } from "react";
 import { ThemeProvider } from "@mui/material/styles";
@@ -18,11 +18,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <GlobalStyles styles={{
           body: { fontFamily: 'Roboto, Helvetica, Arial, sans-serif' },
         }} />
-      <BrowserRouter>
+      <HashRouter>
         <AppProvider>
           <App />
         </AppProvider>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   </StrictMode>,
 );
