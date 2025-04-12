@@ -1,4 +1,4 @@
-##How to Run TrashTrack
+# How to Run TrashTrack
 
 1. Pull the repository
 1. go to /TrashTrack
