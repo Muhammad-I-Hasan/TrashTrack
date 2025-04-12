@@ -1,3 +1,5 @@
+// This page was designed by us, but code was assisted in generating with ChatGPT
+
 import React, { useState } from "react";
 import { Autocomplete } from "@react-google-maps/api";
 import "./MapSearchBar.css";

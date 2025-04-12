@@ -1,4 +1,5 @@
-// src/pages/TrashSchedule.jsx
+// This page was designed by us, but code was assisted in generating with ChatGPT
+
 import React, { useState, useEffect } from "react";
 import { useJsApiLoader } from "@react-google-maps/api";
 import { Button } from "@mui/material";

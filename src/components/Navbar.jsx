@@ -1,3 +1,5 @@
+// This page was designed by us, but code was assisted in generating with ChatGPT
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';

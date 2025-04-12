@@ -1,3 +1,5 @@
+// This page was designed by us, but code was assisted in generating with ChatGPT
+
 import React from 'react';
 import DirectionsIcon from '@mui/icons-material/Directions'; // MUI Directions icon
 import './DepotOption.css'; // Import the CSS file

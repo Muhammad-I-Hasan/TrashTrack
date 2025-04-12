@@ -1,3 +1,5 @@
+// This page was designed by us, but code was assisted in generating with ChatGPT
+
 import React, { useState, useRef } from "react";
 import { GoogleMap, Marker, OverlayView } from "@react-google-maps/api";
 
